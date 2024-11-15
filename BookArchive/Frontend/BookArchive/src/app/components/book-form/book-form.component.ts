@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Book } from '../../models/book.model';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-book-form',
@@ -29,7 +30,10 @@ export class BookFormComponent implements OnInit {
   }
 
   public saveBook(): void {
-    // TODo
+    this.book = this.bookForm.value as Book;
+    this.bookService.update(this.book)
+      .pipe(take(1))
+      .subscribe();
   }
 
 }
