@@ -1,1 +1,9 @@
-<p>book-form works!</p>
+<form [formGroup]="bookForm">
+
+	<label for="author">Author</label>
+	<input id="author" type="text" formControlName="author">
+
+	<label for="title">Title</label>
+	<input id="title" type="text" formControlName="title">
+
+</form>
