@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'BookArchive';
 
   public book: Book = {
-    author: '',
-    title: ''
+    author: 'test',
+    title: 'test'
   };
 }

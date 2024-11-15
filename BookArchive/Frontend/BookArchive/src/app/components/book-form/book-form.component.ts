@@ -22,9 +22,14 @@ export class BookFormComponent implements OnInit {
     title: new FormControl('', { nonNullable: true })
   })
 
-  constructor() {}
+  constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
+    this.bookForm.setValue(this.book);
+  }
+
+  public saveBook(): void {
+    // TODo
   }
 
 }
